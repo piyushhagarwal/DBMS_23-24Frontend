@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import LOTD from "@/components/LOTD";
 import LawCards from "@/components/LawCards";
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <LOTD />
       <LawCards />
+      <Footer />
     </div>
   );
 }
