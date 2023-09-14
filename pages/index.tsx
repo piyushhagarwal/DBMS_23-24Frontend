@@ -1,3 +1,4 @@
+import ChatButton from "@/components/Chatbot";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import LOTD from "@/components/LOTD";
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <LOTD />
       <LawCards />
+      <ChatButton />
       <Footer />
     </div>
   );
