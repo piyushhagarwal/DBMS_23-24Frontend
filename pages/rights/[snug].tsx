@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import AccordionItem from "@/components/Accordion";
 import jsonData from "@/public/data.json";
 
+
 function Snug() {
   const router = useRouter();
   const { snug } = router.query;
@@ -15,10 +16,10 @@ function Snug() {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[520px] text-center lg:mb-20">
-              <h2 className="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px]">
+              <h2 className="mb-4 font-bold text-dark text-6xl">
                 {selectedCategory?.catName}
               </h2>
-              <p className="text-base text-body-color">
+              <p className="text-base text-body-color text-2xl">
                 {selectedCategory?.catDesc}
               </p>
             </div>
@@ -61,9 +62,9 @@ function Snug() {
               y2="-418.681"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#3056D3" stop-opacity="0.36" />
-              <stop offset="1" stop-color="#F5F2FD" stop-opacity="0" />
-              <stop offset="1" stop-color="#F5F2FD" stop-opacity="0.096144" />
+              <stop stop-color="#FF6969" stop-opacity="0.36" />
+              <stop offset="1" stop-color="#FFF9DE" stop-opacity="0" />
+              <stop offset="1" stop-color="#FFF9DE" stop-opacity="0.096144" />
             </linearGradient>
           </defs>
         </svg>

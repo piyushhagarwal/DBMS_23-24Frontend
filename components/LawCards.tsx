@@ -10,19 +10,19 @@ interface catDetails {
 
 function LawCards() {
   return (
-    <div>
+    <div className="opacity-100 bg-white">
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
             {sampleData.map(({ catName, catDesc, id }: catDetails) => (
               <div key={id} className="p-4 lg:w-1/3">
-                <div className="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                <div className="h-full bg-gray-100 bg-opacity-100 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
                   <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
                     {catName}
                   </h1>
                   <p className="leading-relaxed mb-3">{catDesc}</p>
                   <a
-                    className="text-indigo-500 inline-flex items-center"
+                    className="text-maroon inline-flex items-center"
                     href={`/rights/${id}`}
                   >
                     Learn More

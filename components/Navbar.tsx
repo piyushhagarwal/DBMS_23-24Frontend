@@ -33,6 +33,7 @@ export default function App() {
             onMenuOpenChange={setIsMenuOpen}
             isBordered={true}
             isBlurred={true}
+            className=""
         >
             <NavbarContent>
                 <NavbarMenuToggle
@@ -41,7 +42,7 @@ export default function App() {
                 />
                 <NavbarBrand>
                     <AcmeLogo />
-                    <p className="font-bold text-inherit">KYR</p>
+                    <p className="font-bold text-inherit">Juris</p>
                 </NavbarBrand>
             </NavbarContent>
 
@@ -72,7 +73,7 @@ export default function App() {
                     <Link href="#">Login</Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Button as={Link} color="primary" href="#" variant="flat">
+                    <Button as={Link} color="secondary" href="#" variant="flat">
                         Sign Up
                     </Button>
                 </NavbarItem>
