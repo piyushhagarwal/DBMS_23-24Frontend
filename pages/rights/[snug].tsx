@@ -19,7 +19,7 @@ function Snug() {
               <h2 className="mb-4 font-bold text-dark text-6xl">
                 {selectedCategory?.catName}
               </h2>
-              <p className="text-base text-body-color text-2xl">
+              <p className="text-body-color text-2xl">
                 {selectedCategory?.catDesc}
               </p>
             </div>
