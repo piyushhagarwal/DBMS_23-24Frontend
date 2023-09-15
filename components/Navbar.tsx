@@ -40,10 +40,12 @@ export default function App() {
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className="sm:hidden"
                 />
+                <Link href="/">
                 <NavbarBrand>
                     <AcmeLogo />
                     <p className="font-bold text-inherit">Juris</p>
                 </NavbarBrand>
+                </Link>
             </NavbarContent>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
