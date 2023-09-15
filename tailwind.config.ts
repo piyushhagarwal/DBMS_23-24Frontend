@@ -12,10 +12,18 @@ const config: Config = {
     theme: {
         colors: {
             ...colors,
-            navy: "#27005D",
-            poppurple: "#9400FF",
-            skyblue: "#AED2FF",
-            lightblue: "#E4F1FF",
+            // navy: "#27005D",
+            // poppurple: "#8F43EE",
+            // skyblue: "#AED2FF",
+            // lightblue: "#E4F1FF",
+            customyellow: "#FFE06A",
+            maroon: "#A9333A",
+            // pink: "#E1578A"
+            cyan: "#A6D0DD",
+            customred: "#FF6969",
+            skin: "#FFD3B0",
+            sand: "#FFF9DE",
+            lightersand: "#FFFCE1"
         },
         extend: {
             fontFamily: {
@@ -38,8 +46,8 @@ const config: Config = {
                 light: {
                     // ...
                     colors: {
-                        primary: "#27005D",
-                        secondary: "#9400FF",
+                        secondary: "#FF6969",
+                        primary: "#A9333A",
                     },
                 },
                 dark: {
