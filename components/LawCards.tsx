@@ -1,6 +1,6 @@
 import React from "react";
 
-const sampleData = require("./data.json");
+const sampleData = require("../public/data.json");
 
 interface catDetails {
   catName: string;

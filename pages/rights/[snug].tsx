@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import AccordionItem from "@/components/Accordion";
-import jsonData from "@/components/data.json";
+import jsonData from "@/public/data.json";
 
 function Snug() {
   const router = useRouter();

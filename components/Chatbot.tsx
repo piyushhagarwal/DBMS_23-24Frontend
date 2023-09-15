@@ -1,31 +1,32 @@
-import React from 'react';
+import React from "react";
+import Image from "next/image";
 
 const ChatButton: React.FC = () => {
-  const chatbotUrl = 'URL_TO_CHATBOT'; // Replace with the actual chatbot URL
-  const mascotImageUrl = 'https://png.pngtree.com/png-clipart/20210925/ourlarge/pngtree-cartoon-illustration-of-indian-farmers-png-image_3950967.png'; // Replace with the URL of your mascot image
+  const chatbotUrl = "URL_TO_CHATBOT"; // Replace with the actual chatbot URL
+  const mascotImageUrl = "/mascot.png";
 
   const buttonStyle: React.CSSProperties = {
-    backgroundColor: '#007bff',
-    border: 'none',
-    borderRadius: '50%',
-    padding: '10px',
-    cursor: 'pointer',
-    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
-    position: 'fixed',
-    bottom: '220px', // Adjust as needed
-    right: '30px', // Adjust as needed
+    backgroundColor: "#ffff",
+    border: "none",
+    borderRadius: "50%",
+    padding: "10px",
+    cursor: "pointer",
+    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
+    position: "fixed",
+    bottom: "8vh", // Adjust as needed
+    right: "2vh", // Adjust as needed
     zIndex: 1000, // Ensure the button is above other content
-  };
-
-  const imgStyle: React.CSSProperties = {
-    width: '100px',
-    height: '100px',
   };
 
   return (
     <a href={chatbotUrl} target="_blank" rel="noopener noreferrer">
       <button style={buttonStyle}>
-        <img src={mascotImageUrl} alt="Chatbot Mascot" style={imgStyle} />
+        <Image
+          src={mascotImageUrl}
+          alt="Chatbot Mascot"
+          width={100}
+          height={100}
+        />
       </button>
     </a>
   );
