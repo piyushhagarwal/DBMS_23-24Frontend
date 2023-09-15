@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
-import {nextui} from "@nextui-org/react";
-const colors = require('tailwindcss/colors')
+import { nextui } from "@nextui-org/react";
+const colors = require("tailwindcss/colors");
 
 const config: Config = {
     content: [
@@ -11,9 +11,9 @@ const config: Config = {
     ],
     theme: {
         colors: {
-          ...colors,
+            ...colors,
             navy: "#27005D",
-            purple: "#9400FF",
+            poppurple: "#9400FF",
             skyblue: "#AED2FF",
             lightblue: "#E4F1FF",
         },
@@ -31,6 +31,24 @@ const config: Config = {
         },
     },
     darkMode: "class",
-    plugins: [nextui()],
+    plugins: [
+        nextui({
+            addCommonColors: true,
+            themes: {
+                light: {
+                    // ...
+                    colors: {
+                        primary: "#27005D",
+                        secondary: "#9400FF",
+                    },
+                },
+                dark: {
+                    // ...
+                    colors: {},
+                },
+                // ... custom themes
+            },
+        }),
+    ],
 };
 export default config;
