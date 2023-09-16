@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 interface AccordionItemProps {
   header: string;
   text: string;
@@ -43,7 +42,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         </div>
 
         <div className="w-full">
-          <h4 className="text-3xl text-black">{header}</h4>
+          <h4 className="text-2xl text-black">{header}</h4>
         </div>
       </button>
 
@@ -53,8 +52,9 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         }`}
       >
         <p className="py-3 text-xl leading-relaxed text-body-color">{text}</p>
-        <p className="py-3 text-2xl italic leading-relaxed text-body-color">Actions</p>
-
+        <p className="py-3 text-2xl italic leading-relaxed text-body-color">
+          Actions
+        </p>
 
         <ul className="py-3 text-xl list-disc leading-relaxed text-body-color">
           {action.map((item, index) => (
