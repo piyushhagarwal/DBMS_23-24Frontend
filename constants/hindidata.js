@@ -1,4 +1,4 @@
-const categories = [
+export let Hindi = [
     {
         catName: "महिला अधिकार",
         catDesc:
