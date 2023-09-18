@@ -1,7 +1,7 @@
 // import RootLayout from "./layout/layout";
 import { Input, Textarea, Button } from "@nextui-org/react";
 import { useContext, useState } from "react";
-import { samplePrompt, sampleResponse } from "@/data/promptSample";
+import { samplePrompt, sampleResponse } from "@/constants/promptSample";
 import { LanguageContext } from "@/context/LanguageContext";
 
 function Hero() {
@@ -13,7 +13,7 @@ function Hero() {
       <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
         <div className="text-center lg:w-2/3 w-full">
           <h1 className="title-font text-8xl mb-4 pb-4 text-gray-900">
-            Know Your Rights {language}
+            Know Your Rights
           </h1>
           <div className="flex flex-row pb-2 space-x-5">
             <Input
