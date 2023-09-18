@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
     Navbar,
     NavbarBrand,
@@ -12,7 +12,10 @@ import {
     Link,
     Button,
 } from "@nextui-org/react";
+
 import { AcmeLogo } from "../public/AcmeLogo.jsx";
+import { LanguageContext } from "@/context/LanguageContext";
+import { Language } from "@/enums/language";
 
 const Languages = [
     { label: "English", value: "english", description: "English" },
@@ -22,7 +25,7 @@ const Languages = [
 
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    const [value, setValue] = React.useState(new Set([]));
+    const { language, setLanguage } = useContext(LanguageContext); // Get the language state from the context
 
     const menuItems = [
         "Contact Lawyers",
@@ -84,16 +87,16 @@ export default function App() {
                             variant="bordered"
                             size="sm"
                             placeholder="Language"
-                            selectedKeys={value}
+                            selectedKeys={language}
                             className="max-w-xs"
-                            onSelectionChange={setValue}
+                            onSelectionChange={setLanguage}
                         >
-                            {Languages.map((langauge) => (
+                            {Languages.map((language) => (
                                 <SelectItem
-                                    key={langauge.value}
-                                    value={langauge.value}
+                                    key={language.value}
+                                    value={language.value}
                                 >
-                                    {langauge.label}
+                                    {language.label}
                                 </SelectItem>
                             ))}
                         </Select>
