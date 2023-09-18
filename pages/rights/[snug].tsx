@@ -1,12 +1,13 @@
 import { useRouter } from "next/router";
 import AccordionItem from "@/components/Accordion";
-import jsonData from "@/public/data.json";
+// import jsonData from "@/public/data.json";
+import { English } from "@/constants/Englishdata";
 
 function Snug() {
   const router = useRouter();
   const { snug } = router.query;
   const categoryID = parseInt(snug as string, 10) || 0;
-  const selectedCategory = jsonData.find(
+  const selectedCategory = English.find(
     (category) => category.id === categoryID
   );
   return (
@@ -31,8 +32,7 @@ function Snug() {
               <AccordionItem
                 key={index}
                 header={question.q}
-                text={question.ans}
-                action={question.action}
+                ans={question.ans}
               />
             ))}
           </div>

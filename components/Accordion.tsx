@@ -2,15 +2,15 @@ import React, { useState } from "react";
 
 interface AccordionItemProps {
   header: string;
-  text: string;
-  action: Array<string>;
+  // text: string;
+  // action: Array<string>;
+  ans: {
+    heading: string;
+    description: string;
+  }[];
 }
 
-const AccordionItem: React.FC<AccordionItemProps> = ({
-  header,
-  text,
-  action,
-}) => {
+const AccordionItem: React.FC<AccordionItemProps> = ({ header, ans }) => {
   const [active, setActive] = useState(false);
 
   const handleToggle = () => {
@@ -51,14 +51,16 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
           active ? "block" : "hidden"
         }`}
       >
-        <p className="py-3 text-xl leading-relaxed text-body-color">{text}</p>
         <p className="py-3 text-2xl italic leading-relaxed text-body-color">
           Actions
         </p>
 
-        <ul className="py-3 text-xl list-disc leading-relaxed text-body-color">
-          {action.map((item, index) => (
-            <li key={index}>{item}</li>
+        <ul className="py-3  list-disc leading-relaxed text-body-color">
+          {ans.map((item, index) => (
+            <div key={index} className="py-2">
+              <li className="text-xl text">{item.heading}</li>
+              <p className="text-lg text-slate-700">{item.description}</p>
+            </div>
           ))}
         </ul>
       </div>

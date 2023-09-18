@@ -1,10 +1,12 @@
 // import RootLayout from "./layout/layout";
 import { Input, Textarea, Button } from "@nextui-org/react";
-import { useState } from "react";
-import { samplePrompt, sampleResponse } from "@/data/promptSample";
+import { useContext, useState } from "react";
+import { samplePrompt, sampleResponse } from "@/constants/promptSample";
+import { LanguageContext } from "@/context/LanguageContext";
 
 function Hero() {
   const [output, setOutput] = useState(false);
+  const { language } = useContext(LanguageContext); // Get the language state from the context
 
   return (
     <div className="text-gray-600 body-font ">
