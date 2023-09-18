@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const sampleData = require("../public/data.json");
@@ -21,9 +22,9 @@ function LawCards() {
                     {catName}
                   </h1>
                   <p className="leading-relaxed mb-3">{catDesc}</p>
-                  <a
-                    className="text-maroon inline-flex items-center"
+                  <Link
                     href={`/rights/${id}`}
+                    className="text-maroon inline-flex items-center"
                   >
                     Learn More
                     <svg
@@ -38,7 +39,7 @@ function LawCards() {
                       <path d="M5 12h14"></path>
                       <path d="M12 5l7 7-7 7"></path>
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
