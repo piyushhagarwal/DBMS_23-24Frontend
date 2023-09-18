@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Language } from "@/enums/language";
+import { useEffect, useState, useContext } from "react";
 
-const sampleData = require("../public/data.json");
+import { Language } from "@/enums/language";
+import { LanguageContext } from "@/context/LanguageContext";
+import { English } from "@/constants/Englishdata";
+import { Hindi } from "@/constants/hindidata";
 
 interface catDetails {
     catName: string;
@@ -11,17 +13,31 @@ interface catDetails {
 }
 
 function LawCards() {
+    const { language } = useContext(LanguageContext); // Get the language state from the context
+    const [defaultValue, setDefaultValue] = useState(English);
 
     useEffect(() => {
-      
-    }, []);
+        console.log(language.values().next().value);
+        async function temp() {
+            if (language.values().next().value === "hindi") {
+                console.log("HINDI SECTION");
+                setDefaultValue(Hindi);
+            }
+            else if (language.values().next().value === "english") {
+              console.log("HINDI SECTION");
+              setDefaultValue(English);
+          }
+        }
+        temp();
+    }, [language]);
 
     return (
         <div className="opacity-100 bg-white">
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
+                    {/* <p>{defaultValue[0].catDesc}</p> */}
                     <div className="flex flex-wrap -m-4">
-                        {sampleData.map(
+                        {defaultValue.map(
                             ({ catName, catDesc, id }: catDetails) => (
                                 <div key={id} className="p-4 lg:w-1/3">
                                     <div className="h-full bg-gray-100 bg-opacity-100 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
