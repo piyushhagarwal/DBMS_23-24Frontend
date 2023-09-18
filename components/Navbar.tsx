@@ -1,11 +1,12 @@
 import React from "react";
-
 import {
     Navbar,
     NavbarBrand,
     NavbarContent,
     NavbarMenuItem,
     NavbarMenuToggle,
+    Select,
+    SelectItem,
     NavbarMenu,
     NavbarItem,
     Link,
@@ -13,8 +14,15 @@ import {
 } from "@nextui-org/react";
 import { AcmeLogo } from "../public/AcmeLogo.jsx";
 
+const Languages = [
+    { label: "English", value: "english", description: "English" },
+    { label: "Hindi", value: "hindi", description: "Hindi" },
+    { label: "Marathi", value: "marathi", description: "Marathi" },
+];
+
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [value, setValue] = React.useState(new Set([]));
 
     const menuItems = [
         "Contact Lawyers",
@@ -41,10 +49,10 @@ export default function App() {
                     className="sm:hidden"
                 />
                 <Link href="/">
-                <NavbarBrand>
-                    <AcmeLogo />
-                    <p className="font-bold text-inherit">Juris</p>
-                </NavbarBrand>
+                    <NavbarBrand>
+                        <AcmeLogo />
+                        <p className="font-bold text-inherit">Juris</p>
+                    </NavbarBrand>
                 </Link>
             </NavbarContent>
 
@@ -68,6 +76,28 @@ export default function App() {
                     <Link color="foreground" href="#">
                         Contact Us
                     </Link>
+                </NavbarItem>
+                <NavbarItem className="w-full">
+                    <div className="flex w-full max-w-xs flex-col gap-2">
+                        <Select
+                            label="Select Language"
+                            variant="bordered"
+                            size="sm"
+                            placeholder="Language"
+                            selectedKeys={value}
+                            className="max-w-xs"
+                            onSelectionChange={setValue}
+                        >
+                            {Languages.map((langauge) => (
+                                <SelectItem
+                                    key={langauge.value}
+                                    value={langauge.value}
+                                >
+                                    {langauge.label}
+                                </SelectItem>
+                            ))}
+                        </Select>
+                    </div>
                 </NavbarItem>
             </NavbarContent>
             <NavbarContent justify="end">
