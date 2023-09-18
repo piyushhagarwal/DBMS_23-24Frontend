@@ -1,5 +1,5 @@
 export enum Language {
-    hindi,
-    english,
-    marathi,
+    hindi = "Hindi",
+    english = "English",
+    marathi = "Marathi",
 }
