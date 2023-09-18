@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { Language } from "@/enums/language";
 
 // Create a context for your language data
 const LanguageContext = createContext();
@@ -6,7 +7,7 @@ const LanguageContext = createContext();
 // Create a provider component for the language context
 function LanguageProvider({ children }) {
   // Define the state and functions for managing the language
-  const [language, setLanguage] = useState("hi");
+  const [language, setLanguage] = useState(new Set(["english"]));
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
