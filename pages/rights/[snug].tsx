@@ -2,14 +2,28 @@ import { useRouter } from "next/router";
 import AccordionItem from "@/components/Accordion";
 // import jsonData from "@/public/data.json";
 import { English } from "@/constants/Englishdata";
+import { Hindi } from "@/constants/hindidata";
+import { LanguageContext } from "@/context/LanguageContext";
+import { useContext, useEffect, useState } from "react";
 
 function Snug() {
   const router = useRouter();
   const { snug } = router.query;
   const categoryID = parseInt(snug as string, 10) || 0;
-  const selectedCategory = English.find(
-    (category) => category.id === categoryID
-  );
+
+  const { language } = useContext(LanguageContext); // Get the language state from the context
+  const [defaultValue, setDefaultValue] = useState();
+
+  let selectedCategory = English.find((category) => category.id === categoryID);
+
+  if (language.values().next().value === "english") {
+    selectedCategory = English.find((category) => category.id === categoryID);
+  } else if (language.values().next().value === "hindi") {
+    selectedCategory = Hindi.find((category) => category.id === categoryID);
+  } else if (language.values().next().value === "marathi") {
+    // setDefaultValue(Hindi);
+  }
+
   return (
     <section className="relative z-20 overflow-hidden bg-white pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
       <div className="container mx-auto">
