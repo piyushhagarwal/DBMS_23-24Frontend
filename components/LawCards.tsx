@@ -5,6 +5,7 @@ import { Language } from "@/enums/language";
 import { LanguageContext } from "@/context/LanguageContext";
 import { English } from "@/constants/Englishdata";
 import { Hindi } from "@/constants/hindidata";
+import { Marathi } from "@/constants/MarathiData"
 
 interface catDetails {
     catName: string;
@@ -24,9 +25,13 @@ function LawCards() {
                 setDefaultValue(Hindi);
             }
             else if (language.values().next().value === "english") {
-              console.log("HINDI SECTION");
+              console.log("ENGLISH SECTION");
               setDefaultValue(English);
-          }
+            }
+            else if (language.values().next().value === "marathi") {
+                console.log("MARATHI SECTION");
+                setDefaultValue(Marathi);
+            }
         }
         temp();
     }, [language]);
