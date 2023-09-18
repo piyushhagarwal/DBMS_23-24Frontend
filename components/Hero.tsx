@@ -1,17 +1,19 @@
 // import RootLayout from "./layout/layout";
 import { Input, Textarea, Button } from "@nextui-org/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { samplePrompt, sampleResponse } from "@/data/promptSample";
+import { LanguageContext } from "@/context/LanguageContext";
 
 function Hero() {
   const [output, setOutput] = useState(false);
+  const { language } = useContext(LanguageContext); // Get the language state from the context
 
   return (
     <div className="text-gray-600 body-font ">
       <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
         <div className="text-center lg:w-2/3 w-full">
           <h1 className="title-font text-8xl mb-4 pb-4 text-gray-900">
-            Know Your Rights
+            Know Your Rights {language}
           </h1>
           <div className="flex flex-row pb-2 space-x-5">
             <Input
