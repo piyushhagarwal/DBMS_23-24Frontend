@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <LawCards />
+      {/* <LawCards /> */}
       <ChatButton />
     </div>
   );
