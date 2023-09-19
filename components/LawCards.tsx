@@ -6,6 +6,12 @@ import { LanguageContext } from "@/context/LanguageContext";
 import { English } from "@/constants/englishData";
 import { Hindi } from "@/constants/hindiData";
 import { Marathi } from "@/constants/marathiData";
+import localfont from "next/font/local";
+
+const sfmedium = localfont({
+    src: "../public/fonts/SF-Pro-Display-Medium.otf",
+    variable: "--font-sfmedium",
+});
 
 interface catDetails {
     catName: string;
@@ -20,13 +26,13 @@ function LawCards() {
     useEffect(() => {
         // console.log(language.values().next().value);
         async function temp() {
-            if (language.values().next().value === "hindi") {
+            if (language.values().next().value === Language.hindi) {
                 // console.log("HINDI SECTION");
                 setDefaultValue(Hindi);
-            } else if (language.values().next().value === "english") {
+            } else if (language.values().next().value === Language.english) {
                 // console.log("ENGLISH SECTION");
                 setDefaultValue(English);
-            } else if (language.values().next().value === "marathi") {
+            } else if (language.values().next().value === Language.marathi) {
                 // console.log("MARATHI SECTION");
                 setDefaultValue(Marathi);
             }
@@ -47,9 +53,13 @@ function LawCards() {
                                         <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
                                             {catName}
                                         </h1>
-                                        <p className="leading-relaxed mb-3">
+
+                                        <p
+                                            className={`leading-relaxed mb-3 ${sfmedium.className}`}
+                                        >
                                             {catDesc}
                                         </p>
+
                                         <Link
                                             href={`/rights/${id}`}
                                             className="text-maroon inline-flex items-center"

@@ -16,11 +16,17 @@ import {
 import { AcmeLogo } from "../public/AcmeLogo.jsx";
 import { LanguageContext } from "@/context/LanguageContext";
 import { Language } from "@/enums/language";
+import localfont from "next/font/local";
+
+const sfmedium = localfont({
+    src: "../public/fonts/SF-Pro-Display-Medium.otf",
+    variable: "--font-sfmedium",
+});
 
 const Languages = [
-    { label: "English", value: "english", description: "English" },
-    { label: "Hindi", value: "hindi", description: "Hindi" },
-    { label: "Marathi", value: "marathi", description: "Marathi" },
+    { label: "English", value: Language.english, description: "English" },
+    { label: "Hindi", value: Language.hindi, description: "Hindi" },
+    { label: "Marathi", value: Language.marathi, description: "Marathi" },
 ];
 
 export default function App() {
@@ -60,7 +66,7 @@ export default function App() {
             </NavbarContent>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                <NavbarItem>
+                <NavbarItem className={sfmedium.className}>
                     <Link color="foreground" href="#">
                         Contact Lawyers
                     </Link>
@@ -70,17 +76,17 @@ export default function App() {
                         Take Action
                     </Link>
                 </NavbarItem>
-                <NavbarItem>
+                <NavbarItem className={sfmedium.className}>
                     <Link color="foreground" href="#">
                         News
                     </Link>
                 </NavbarItem>
-                <NavbarItem>
+                <NavbarItem className={sfmedium.className}>
                     <Link color="foreground" href="#">
                         Contact Us
                     </Link>
                 </NavbarItem>
-                <NavbarItem className="w-full">
+                <NavbarItem className={`w-full ${sfmedium.className}`}>
                     <div className="flex w-full max-w-xs flex-col gap-2">
                         <Select
                             label="Select Language"
@@ -88,7 +94,7 @@ export default function App() {
                             size="sm"
                             placeholder="Language"
                             selectedKeys={language}
-                            className="max-w-xs"
+                            className="max-w-l min-w-max"
                             onSelectionChange={setLanguage}
                         >
                             {Languages.map((language) => (

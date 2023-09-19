@@ -1,3 +1,4 @@
+import { Language } from "@/enums/language";
 import axios, { AxiosResponse } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -12,9 +13,9 @@ export default async function handler(
 
         let inputLanguage: string = "en";
 
-        if (language === "hindi") {
+        if (language === Language.hindi) {
             inputLanguage = "hi";
-        } else if (language === "marathi") {
+        } else if (language === Language.marathi) {
             inputLanguage = "mr";
         }
 
