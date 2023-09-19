@@ -3,9 +3,9 @@ import { useEffect, useState, useContext } from "react";
 
 import { Language } from "@/enums/language";
 import { LanguageContext } from "@/context/LanguageContext";
-import { English } from "@/constants/Englishdata";
-import { Hindi } from "@/constants/hindidata";
-import { Marathi } from "@/constants/MarathiData"
+import { English } from "@/constants/englishData";
+import { Hindi } from "@/constants/hindiData";
+import { Marathi } from "@/constants/marathiData";
 
 interface catDetails {
     catName: string;
@@ -23,12 +23,10 @@ function LawCards() {
             if (language.values().next().value === "hindi") {
                 console.log("HINDI SECTION");
                 setDefaultValue(Hindi);
-            }
-            else if (language.values().next().value === "english") {
-              console.log("ENGLISH SECTION");
-              setDefaultValue(English);
-            }
-            else if (language.values().next().value === "marathi") {
+            } else if (language.values().next().value === "english") {
+                console.log("ENGLISH SECTION");
+                setDefaultValue(English);
+            } else if (language.values().next().value === "marathi") {
                 console.log("MARATHI SECTION");
                 setDefaultValue(Marathi);
             }
