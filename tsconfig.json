@@ -21,7 +21,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "context/LanguageContext.js"
+    "context/LanguageContext.js",
+    "pages/api/proxy.js"
   ],
   "exclude": ["node_modules"]
 }
