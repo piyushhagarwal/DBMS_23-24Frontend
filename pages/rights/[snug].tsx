@@ -3,6 +3,7 @@ import AccordionItem from "@/components/Accordion";
 // import jsonData from "@/public/data.json";
 import { English } from "@/constants/Englishdata";
 import { Hindi } from "@/constants/hindidata";
+import { Marathi } from "@/constants/MarathiData";
 import { LanguageContext } from "@/context/LanguageContext";
 import { useContext, useEffect, useState } from "react";
 
@@ -12,7 +13,6 @@ function Snug() {
   const categoryID = parseInt(snug as string, 10) || 0;
 
   const { language } = useContext(LanguageContext); // Get the language state from the context
-  const [defaultValue, setDefaultValue] = useState();
 
   let selectedCategory = English.find((category) => category.id === categoryID);
 
@@ -21,7 +21,7 @@ function Snug() {
   } else if (language.values().next().value === "hindi") {
     selectedCategory = Hindi.find((category) => category.id === categoryID);
   } else if (language.values().next().value === "marathi") {
-    // setDefaultValue(Hindi);
+    selectedCategory = Marathi.find((category) => category.id === categoryID);
   }
 
   return (
