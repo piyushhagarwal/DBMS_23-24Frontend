@@ -1,0 +1,31 @@
+import axios, { AxiosResponse } from "axios";
+import { NextApiRequest, NextApiResponse } from "next";
+
+export default async function handler(
+    req: NextApiRequest,
+    res: NextApiResponse
+) {
+    try {
+        const { language, query } = req.body;
+        // console.log(query, language);
+        // console.log(req.body);
+
+        let inputLanguage: string = "en";
+
+        if (language === "hindi") {
+            inputLanguage = "hi";
+        } else if (language === "marathi") {
+            inputLanguage = "mr";
+        }
+
+        const response: AxiosResponse = await axios.get(
+            `http://aca2-34-143-144-203.ngrok-free.app/get/${inputLanguage}/${query}`
+        );
+
+        const data = response.data;
+        res.status(200).json(data);
+    } catch (error) {
+        console.error("Error proxying request:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+}

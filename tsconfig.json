@@ -22,7 +22,7 @@
     "**/*.ts",
     "**/*.tsx",
     "context/LanguageContext.js",
-    "pages/api/proxy.js"
+    "pages/api/proxy.ts"
   ],
   "exclude": ["node_modules"]
 }
