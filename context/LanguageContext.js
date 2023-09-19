@@ -7,7 +7,7 @@ const LanguageContext = createContext();
 // Create a provider component for the language context
 function LanguageProvider({ children }) {
   // Define the state and functions for managing the language
-  const [language, setLanguage] = useState(new Set(["english"]));
+  const [language, setLanguage] = useState(new Set([Language.english]));
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>

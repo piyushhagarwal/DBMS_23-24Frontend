@@ -5,8 +5,9 @@ import { English } from "@/constants/englishData";
 import { Hindi } from "@/constants/hindiData";
 import { Marathi } from "@/constants/marathiData";
 import { LanguageContext } from "@/context/LanguageContext";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import localfont from "next/font/local";
+import { Language } from "@/enums/language";
 
 const sfmedium = localfont({
     src: "../../public/fonts/SF-Pro-Display-Medium.otf",
@@ -24,13 +25,15 @@ function Snug() {
         (category) => category.id === categoryID
     );
 
-    if (language.values().next().value === "english") {
+    if (language.values().next().value === Language.english) {
         selectedCategory = English.find(
             (category) => category.id === categoryID
         );
-    } else if (language.values().next().value === "hindi") {
-        selectedCategory = Hindi.find((category) => category.id === categoryID);
-    } else if (language.values().next().value === "marathi") {
+    } else if (language.values().next().value === Language.hindi) {
+        selectedCategory = Hindi.find(
+            (category) => category.id === categoryID
+        );
+    } else if (language.values().next().value === Language.marathi) {
         selectedCategory = Marathi.find(
             (category) => category.id === categoryID
         );

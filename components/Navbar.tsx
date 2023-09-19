@@ -24,9 +24,9 @@ const sfmedium = localfont({
 });
 
 const Languages = [
-    { label: "English", value: "english", description: "English" },
-    { label: "Hindi", value: "hindi", description: "Hindi" },
-    { label: "Marathi", value: "marathi", description: "Marathi" },
+    { label: "English", value: Language.english, description: "English" },
+    { label: "Hindi", value: Language.hindi, description: "Hindi" },
+    { label: "Marathi", value: Language.marathi, description: "Marathi" },
 ];
 
 export default function App() {
