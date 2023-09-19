@@ -6,6 +6,12 @@ import { LanguageContext } from "@/context/LanguageContext";
 import { English } from "@/constants/englishData";
 import { Hindi } from "@/constants/hindiData";
 import { Marathi } from "@/constants/marathiData";
+import localfont from "next/font/local";
+
+const sfmedium = localfont({
+    src: "../public/fonts/SF-Pro-Display-Medium.otf",
+    variable: "--font-sfmedium",
+});
 
 interface catDetails {
     catName: string;
@@ -47,9 +53,13 @@ function LawCards() {
                                         <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
                                             {catName}
                                         </h1>
-                                        <p className="leading-relaxed mb-3">
+
+                                        <p
+                                            className={`leading-relaxed mb-3 ${sfmedium.className}`}
+                                        >
                                             {catDesc}
                                         </p>
+
                                         <Link
                                             href={`/rights/${id}`}
                                             className="text-maroon inline-flex items-center"

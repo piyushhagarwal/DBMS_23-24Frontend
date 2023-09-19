@@ -6,6 +6,12 @@ import { Hindi } from "@/constants/hindiData";
 import { Marathi } from "@/constants/marathiData";
 import { LanguageContext } from "@/context/LanguageContext";
 import { useContext, useEffect, useState } from "react";
+import localfont from "next/font/local";
+
+const sfmedium = localfont({
+    src: "../../public/fonts/SF-Pro-Display-Medium.otf",
+    variable: "--font-sfmedium",
+});
 
 function Snug() {
     const router = useRouter();
@@ -39,7 +45,9 @@ function Snug() {
                             <h2 className="mb-4 font-bold text-dark text-6xl">
                                 {selectedCategory?.catName}
                             </h2>
-                            <p className="text-body-color text-2xl">
+                            <p
+                                className={`text-body-color text-2xl ${sfmedium.className}`}
+                            >
                                 {selectedCategory?.catDesc}
                             </p>
                         </div>
