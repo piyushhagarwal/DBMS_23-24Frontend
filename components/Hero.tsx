@@ -20,7 +20,8 @@ function Hero() {
     };
     console.log(inputQuery);
     const jsonRequestBody = JSON.stringify(inputQuery);
-    const apiUrl = "http://localhost:3000/api/proxy";
+    const apiUrl =
+      "https://frontend-g1525gjdw-quantum-quake.vercel.app/api/proxy";
     try {
       const response = await axios.post(apiUrl, jsonRequestBody, {
         headers: {
