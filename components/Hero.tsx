@@ -18,7 +18,7 @@ function Hero() {
       query: textInputData,
       language: language.values().next().value,
     };
-    console.log(inputQuery);
+    // console.log(inputQuery);
     const jsonRequestBody = JSON.stringify(inputQuery);
     const apiUrl = "/api/proxy";
     try {

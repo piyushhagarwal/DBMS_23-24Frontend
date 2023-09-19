@@ -18,16 +18,16 @@ function LawCards() {
     const [defaultValue, setDefaultValue] = useState(English);
 
     useEffect(() => {
-        console.log(language.values().next().value);
+        // console.log(language.values().next().value);
         async function temp() {
             if (language.values().next().value === "hindi") {
-                console.log("HINDI SECTION");
+                // console.log("HINDI SECTION");
                 setDefaultValue(Hindi);
             } else if (language.values().next().value === "english") {
-                console.log("ENGLISH SECTION");
+                // console.log("ENGLISH SECTION");
                 setDefaultValue(English);
             } else if (language.values().next().value === "marathi") {
-                console.log("MARATHI SECTION");
+                // console.log("MARATHI SECTION");
                 setDefaultValue(Marathi);
             }
         }
